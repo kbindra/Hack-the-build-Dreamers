@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='checkout.css') }}">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <link href="https://cdn.rawgit.com/michalsnik/aos/2.1.1/dist/aos.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Document</title>
+</head>
+<body>
+    <div id="drag">
+        <section id="sideMenu">
+            <div id="heading" style="display: inline-block;">
+            <h4 style="color: #92CF48; padding: 30px 20px 10px 30px ; float: left;"> <strong>Close-o-Meter</strong></h1>
+            <a href="#" onclick="closeNav()"><i class="fa fa-times" aria-hidden="true"></i></i></a>
+            </div>
+        <nav>
+            <a href="{{ url_for('home') }}"><i class="fa fa-home" aria-hidden="true"></i> Dashboard</a>
+            <a href="{{ url_for('restaurant') }}"><i class="fa fa-cutlery" aria-hidden="true"></i> Restaurants</a>
+            <a href="#"><i class="fa fa-users" aria-hidden="true"></i> Events</a>
+            <a href="#"><i class="fa fa-id-badge" aria-hidden="true"></i> About</a>
+        </nav>
+        </section>
+    </div>
+    <div id="part2">
+    <section id="drag-right">
+        <a href="javascript:void(0)" onclick="openNav()"><i class="fa fa-bars" aria-hidden="true"></i></a>
+    </section>
+    </div>
+    <section id="tab" >
+        <ul class="nav nav-tabs" id="myTab" role="tablist" style="justify-content: center;">
+            <li class="nav-item" >
+              <a class="nav-link active" id="home-tab" data-toggle="tab" href="{{ url_for('checkout') }}" role="tab" aria-controls="home" aria-selected="true">Checkout</a>
+            </li>
+            <li class="nav-item" >
+              <a class="nav-link" id="profile-tab" data-toggle="tab" href="{{ url_for('liveupdates') }}" role="tab" aria-controls="profile" aria-selected="false">Live Updates</a>
+            </li>
+          </ul>
+          <div class="tab-content" id="myTabContent">
+            <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+             <div   class="container" style="margin-top: 30px;">
+                 <div class="row">
+                     <div class="col-8">
+                        <div class="card border-0" >
+                            <img data-aos="fade-up" class="card-img-top" src="{{ res.img_src }}" alt="Card image cap">
+                            <div  class="card-body">
+                              <h5 data-aos="fade-up"  class="card-title" style="font-size: 2rem; font-family: 'Montserrat', sans-serif; display: inline;">{{ res.name }}</h5>
+                              <h6  class="text-right"  style="color: rgb(104, 104, 100); font-size: 18px; display: inline-block; float: right;"><i style="font-size: 1.5rem; color: yellow" class="fa fa-star" aria-hidden="true"></i> {{ res.rating }} Moderate Safety</h6>
+                              <h6  style="font-size: 1.3rem; font-family: 'Montserrat', sans-serif;">{{ res.city }}</h6>
+                              <p  class="card-text" style="font-size: 1.3rem; font-family: 'Montserrat', sans-serif;">{{ res.description }}</p>
+                              <p  class="card-text" style="color: rgb(156, 153, 153); font-family: 'Montserrat', sans-serif;">Good Food and Good Service, Relaxed Atmosphere, Gastronomical Experience, Comfortable Seating Area, Spill Proof Packaging, Wonderful Presentation</p>
+                              <h6 data-aos="fade-up"  style="color: rgb(104, 104, 100); font-size: 20px; text-align: center;"><i style="font-size: 1.5rem; color: rgb(211, 51, 51); animation:float 1s infinite alternate;" class="fa fa-users" aria-hidden="true"></i> {{ res.people }} are currently here </h6>
+                              <canvas data-aos="fade-up" id="myChart" height="100px"></canvas>
+                              <ul data-aos="fade-up" class="nav nav-tabs" id="myTab" role="tablist">
+                                <li class="nav-item" >
+                                  <a class="nav-link active" id="review-tab" data-toggle="tab" role="tab" aria-controls="home" aria-selected="true">Reviews</a>
+                                </li>
+                              </ul>
+                              {% for review in res.reviews %}
+                                <div data-aos="fade-up" class="card" style="margin-bottom: 10px; margin-top: 10px;">
+                                    <div class="card-header" style="background: rgba(56, 38, 90, 0.2); color: black">
+                                       Posted on:  {{ review.date_posted }}
+                                    </div>
+                                    <div class="card-body" >
+                                        <p class="card-text" style="padding: 0; color: rgb(185, 178, 178);"><i class="fa fa-thumbs-up" aria-hidden="true" style="color: rgb(19, 216, 19);"></i> positive</p>
+                                        <p class="card-text" class="list-group-item" style="border-top: 0 none; padding: 0;">{{ review.content }}</li>
+                                    </div>
+                                </div>
+                               {% endfor %}
+                              <button  class="btn btn-primary" style="width: 100%; background: rgb(192, 45, 45);">Checkout</a>
+                            </div>
+                          </div>
+                     </div>
+                     <div class="col-4">
+                        <div data-aos="fade-up" class="card" >
+                            <img class="card-img-top" src="https://secure.i.telegraph.co.uk/multimedia/archive/01798/mobile_1798333c.jpg" alt="Card image cap">
+                            <div class="card-body">
+                              <h5 class="card-title">Latest Updates</h5>
+                              <p class="card-text">Stay updated with the latest updates and catch more at live updates.</p>
+                            </div>
+                            <ul class="list-group list-group-flush">
+                              <li class="list-group-item">Live poll of sanitization gave a result of 4 star rating to this place</li>
+                              <li class="list-group-item">8-9 pm was the busiest time, more than 35 people checked in</li>
+                              <li class="list-group-item">Last 5 reviews have shown positive results for measures taken for safety of customers</li>
+                            </ul>
+                            <div class="card-body">
+                              <a href="{{ url_for('liveupdates') }}" class="card-link">Check more</a>
+                            </div>
+                          </div>
+                     </div>
+                 </div>
+             </div>
+            </div>
+          </div>
+    </section>
+    <script src="https://cdn.rawgit.com/michalsnik/aos/2.1.1/dist/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.3/dist/Chart.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
+    <script>
+        function openNav() {
+          $('#drag').show();
+          $('#part2').hide();
+          document.getElementById("myTabContent").style.marginLeft = "300px";
+        }
+        
+        function closeNav() {
+            $('#drag').hide();
+            $('#part2').show(200);
+            document.getElementById("myTabContent").style.marginLeft = "50px";
+        }
+        //chart
+        var ctx = document.getElementById('myChart').getContext('2d');
+        var myChart = new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: ['12 pm', '1 pm', '2 pm', '3 pm', '5 pm', '6 pm', '7 pm', '8 pm', '9 pm', '10 pm', '11 pm', '12 am'],
+                datasets: [{
+                    label: 'Tally of customers during the day',
+                    data: [12, 19, 3, 5, 16, 18, 25, 30, 34, 38, 26, 13 ],
+                    backgroundColor: [
+                        'rgba(54, 162, 235, 0.2)',
+                        'rgba(54, 162, 235, 0.2)',
+                        'rgba(54, 162, 235, 0.2)',
+                        'rgba(54, 162, 235, 0.2)',
+                        'rgba(54, 162, 235, 0.2)',
+                        'rgba(54, 162, 235, 0.2)',
+                        'rgba(54, 162, 235, 0.2)',
+                        'rgba(54, 162, 235, 0.2)',
+                        'rgba(54, 162, 235, 0.2)',
+                        'rgba(54, 162, 235, 0.2)',
+                        'rgba(54, 162, 235, 0.2)',
+                        'rgba(54, 162, 235, 0.2)'
+                    ],
+                    borderColor: [
+                        'rgba(54, 162, 235, 1)',
+                        'rgba(54, 162, 235, 1)',
+                        'rgba(54, 162, 235, 1)',
+                        'rgba(54, 162, 235, 1)',
+                        'rgba(54, 162, 235, 1)',
+                        'rgba(54, 162, 235, 1)',
+                        'rgba(54, 162, 235, 1)',
+                        'rgba(54, 162, 235, 1)',
+                        'rgba(54, 162, 235, 1)',
+                        'rgba(54, 162, 235, 1)',
+                        'rgba(54, 162, 235, 1)',
+                        'rgba(54, 162, 235, 1)',
+                    ],
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                scales: {
+                    yAxes: [{
+                        ticks: {
+                            beginAtZero: true
+                        }
+                    }]
+                }
+            }
+        });
+
+        AOS.init({
+            easing: 'ease-in-quad',
+        });
+        </script>
+</body>
+</html>

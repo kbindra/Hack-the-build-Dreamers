@@ -1,0 +1,95 @@
+@import url(
+    'https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: 'Roboto', sans-serif;
+}
+
+body {
+    background: #EAEDF3;
+}
+#sideMenu {
+    background: #302D43;
+    width: 280px;
+    height: 100%;
+    position: fixed;
+    overflow-x: hidden;
+    top: 0;
+    bottom: 0;
+    transition: 0.8s;
+  }
+  
+  #sideMenu nav {
+    padding-top: 10px;
+  }
+  
+  #sideMenu nav a{
+    display: block;
+    position: relative;
+    text-decoration: none;
+    color: #EAEDF3;
+    padding: 15px 30px;
+  }
+  
+  #sideMenu nav a i{
+     color: #92CF48;
+     font-size: 1.2rem;
+     margin-right: 0.8rem;
+     display: inline-block;
+     position: relative;
+     top: 2px;
+     width: 30px;
+  }
+  
+  #sideMenu nav a:active{
+    background: #282639;
+    border-left: 5px solid #92CF48;
+    padding: 15px 30px 15px 25px;
+  }
+  
+  #sideMenu nav a:hover{
+    background: #282639;
+    border-left: 5px solid #92CF48;
+    padding: 15px 30px 15px 25px;
+  }
+  
+  #sideMenu div a{
+    position: absolute;
+    top: 0;
+    right: 25px;
+    color: #EAEDF3;
+    font-size: 1.5rem;
+    padding: 20px 10px;
+  }
+  
+  #drag {
+    display: none;
+  }
+  
+  #drag-right {
+    background: #302D43;
+    width: 50px;
+    position: fixed;
+    overflow-x: hidden;
+    top: 0;
+    bottom: 0;
+  }
+  
+  #drag-right a{
+    color: #EAEDF3;
+    padding: 30px 10px;
+    font-size: 1.8rem;
+  }
+
+header {
+    background: white;
+    margin-left: 50px;
+    padding: 10px;
+    box-shadow: 0 4px 6px 0 rgba(0, 0, 0, 0.2);
+}
+
+.tablist li{
+    display: inline-block;
+}
