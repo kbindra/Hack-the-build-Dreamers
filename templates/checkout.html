@@ -20,12 +20,15 @@
             <h4 style="color: #92CF48; padding: 30px 20px 10px 30px ; float: left;"> <strong>Close-o-Meter</strong></h1>
             <a href="#" onclick="closeNav()"><i class="fa fa-times" aria-hidden="true"></i></i></a>
             </div>
-        <nav>
-            <a href="{{ url_for('home') }}"><i class="fa fa-home" aria-hidden="true"></i> Dashboard</a>
-            <a href="{{ url_for('restaurant') }}"><i class="fa fa-cutlery" aria-hidden="true"></i> Restaurants</a>
-            <a href="#"><i class="fa fa-users" aria-hidden="true"></i> Events</a>
-            <a href="{{url_for('about')}}"><i class="fa fa-id-badge" aria-hidden="true"></i> About</a>
-        </nav>
+            <nav>
+              <a href="{{ url_for('home') }}"><i class="fa fa-home" aria-hidden="true"></i> Dashboard</a>
+              <a href="{{ url_for('restaurant') }}"><i class="fa fa-cutlery" aria-hidden="true"></i> Restaurants & Dining</a>
+              <a href="#"><i class="fa fa-medkit" aria-hidden="true"></i>Health & Cosemetics</a>
+              <a href="#"><i class="fa fa-shopping-cart" aria-hidden="true"></i>Stores & Malls</a>
+              <a href="#"><i class="fa fa-calendar" aria-hidden="true"></i>Events and Festivities</a>
+              <a href="{{ url_for('register') }}"><i class="fa fa-sign-in" aria-hidden="true"></i> Register with Us</a>
+              <a href="{{ url_for('about') }}"><i class="fa fa-id-badge" aria-hidden="true"></i> About</a>
+          </nav>
         </section>
     </div>
     <div id="part2">
@@ -114,8 +117,8 @@
     <h5>Please help us improve customer experience!!</h5>
     <div class="form-group">
       <label for="Rating"><h6>How would you like to rate the place?</h6></label>
-      <fieldset class="stars" style="margin-right:150px;" name="stars" required>
-      <input type="radio" name="stars" id="star1" ontouchstart="ontouchstart"/>
+      <fieldset class="stars" style="margin-right:150px;" name="stars">
+      <input type="radio" name="stars" id="star1" ontouchstart="ontouchstart" required/>
       <label class="fa fa-star" for="star1"></label>
       <input type="radio" name="stars" id="star2" ontouchstart="ontouchstart"/>
       <label class="fa fa-star" for="star2"></label>
@@ -193,7 +196,7 @@
     </div>
     <div class="form-group">
         <label for="comment"><h6>Any other Review?</h6></label>
-        <textarea class="form-control" rows="3.5" id="comment" name="review"></textarea>
+        <textarea class="form-control" rows="3.5" id="comment" name="review" required></textarea>
     </div>
     <button type="submit" class="btn btn-primary" style="width: 150px; margin-left: 150px;" id="fbsubmit">Submit</button>
   </form>
@@ -321,8 +324,6 @@
         $('#wholepage').addClass('blur-out');
         });
         $('#fbsubmit').click(function (e) {
-        $('#feedback').fadeOut(700);
-        $('#wholepage').removeClass('blur-filter');
 
         //form submission
         (function() {

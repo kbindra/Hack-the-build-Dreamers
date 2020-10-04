@@ -8,17 +8,13 @@
 }
 
 body {
-    background: #F4F6F9;
-    background-size: cover;
-      background-image: url('/static/images/bg1.jpg');
-      background-repeat: no-repeat;
-      background-attachment: fixed;
+    background: white;
 }
 
 
 
 #main {
-  margin-top: 250px;
+  margin-top: 30px;
   z-index: 1000;
 }
 

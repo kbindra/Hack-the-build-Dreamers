@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{{ url_for('static', filename='main.css') }}">
+    <link href="https://cdn.rawgit.com/michalsnik/aos/2.1.1/dist/aos.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <title>Close-o-Meter</title>
@@ -16,10 +18,13 @@
         <a href="#" onclick="closeNav()"><i class="fa fa-times" aria-hidden="true"></i></i></a>
         </div>
     <nav>
-            <a href="#"><i class="fa fa-home" aria-hidden="true"></i> Dashboard</a>
-            <a href="{{ url_for('restaurant') }}"><i class="fa fa-cutlery" aria-hidden="true"></i> Restaurants</a>
-            <a href="{{ url_for('feedback') }}"><i class="fa fa-users" aria-hidden="true"></i> Events</a>
-            <a href="{{url_for('about')}}"><i class="fa fa-id-badge" aria-hidden="true"></i> About</a>
+            <a href="{{ url_for('home') }}"><i class="fa fa-home" aria-hidden="true"></i> Dashboard</a>
+            <a href="{{ url_for('restaurant') }}"><i class="fa fa-cutlery" aria-hidden="true"></i> Restaurants & Dining</a>
+            <a href="#"><i class="fa fa-medkit" aria-hidden="true"></i>Health & Cosemetics</a>
+            <a href="#"><i class="fa fa-shopping-cart" aria-hidden="true"></i>Stores & Malls</a>
+            <a href="#"><i class="fa fa-calendar" aria-hidden="true"></i>Events and Festivities</a>
+            <a href="{{ url_for('register') }}"><i class="fa fa-sign-in" aria-hidden="true"></i> Register with Us</a>
+            <a href="{{ url_for('about') }}"><i class="fa fa-id-badge" aria-hidden="true"></i> About</a>
         </nav>
         </section>
     </div>
@@ -28,7 +33,7 @@
         <a href="javascript:void(0)" onclick="openNav()"><i class="fa fa-bars" aria-hidden="true"></i></a>
     </section>
     </div>
-      <div id="carousel1" style="margin-top: 0; margin-left: 50px; margin-right: 0; ">
+      <div  id="carousel1" style="margin-top: 0; margin-left: 50px; margin-right: 0; ">
         <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
           <ol class="carousel-indicators">
             <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
@@ -53,6 +58,9 @@
                         3.Hygiene and physical distancing has to be maintained. Shaking hands and hugging as
   a matter of greeting to be avoided.
                       </p>
+                      <p class="card-text" style="font-size: 1.3rem;">
+                        4. Keep communities informed consistently and constantly. 
+                      </p>
                       <p class="card-text"><small>Credits: Ministry of Health & Family Welfare </small> </p>
                 </div>
               </div>
@@ -75,36 +83,57 @@
           </a>
         </div>
       </div>
+      <section id="main">
     <div class="container" id="main1">
-      <div class="row" style="margin-left:40px; margin-top: 25px;">
-        <h2>Stay Updated with Most Crowded and Least Crowded Places</h2>
-        <div id="map" style="box-shadow:0 4px 6px 0 rgba(0, 0, 0, 0.2);">
-          <img width="600" src="{{ url_for('static', filename='images/map.png') }}">
+      <div data-aos="fade-up" class="row" style="width: 100%;">
+        <h2 style="font-family: 'Montserrat', sans-serif;">Stay Updated with Most Crowded and Least Crowded Places</h2>
+        <div id="map">
+          <div  class="card mb-3" >
+            <div class="row no-gutters">
+              <div class="col-md-4">
+                <img src="{{ url_for('static', filename='images/mapscluster.jpg') }}" class="card-img" alt="..."/>
+              </div>
+              <div class="col-8">
+                <div class="card-body">
+                  <h5 class="card-title">Top 5 crowded Places</h5>
+                  <p class="card-text"><small class="text-muted">The content gets updated every hour. We recieve data from restaurants and events, User's privacy is not breached</small></p>
+                  <ul class="list-group list-group">
+                    <li class="list-group-item">156 people checked in at Sea Hawks Events, Connaught Place</li>
+                    <li class="list-group-item">A total of 300 people are there in Hudson Lane</li>
+                    <li class="list-group-item">78, Highest number of people checking in at Take off Scarlet 4pm</li>
+                    <li class="list-group-item">Connaught place has total 459 people dining at different restaurants </li>
+                    <li class="list-group-item">Khan Market was the least crowded place</li>
+                  </ul>
+                  <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
-       <div class="row" style="margin-left:40px; margin-top: 25px;">
-        <h2>Explore and Find places that are safe to visit</h2>
+       <div data-aos="fade-up" class="row">
+        <h2 style="font-family: 'Montserrat', sans-serif;">Explore and Find places that are safe to visit</h2>
        </div>
-       <div class="row" style="margin-left:40px; margin-top: 5px;">
+       <div data-aos="fade-up" class="row" >
         <div class="col-sm-3">
-          <div id="mycard" class="card" style="border-radius: 25px; margin-bottom: 15px; margin-top: 20px; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">
+          <div  id="mycard" class="card" style="border-radius: 25px; margin-bottom: 15px; margin-top: 20px; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">
             <img class="card-img-top" src = "{{ url_for('static', filename='images/Restaurants.jpg')}}" alt="Card image cap" style="height: 180px; border-radius: 25px 25px 0px 0px;">
             <div class="card-body" style="padding: 20px;">
                 <div style="display: flex; justify-content: space-between;">
                     <h5  style="color: rgb(77, 76, 76); padding-right: 15px; float: left;">Restaurants and Dining</h5>
                 </div>
                 <div style="position: relative;">
-                    <a href="#" class="btn btn-primary" style="width: 100%;">Discover More</a>
+                    <a href="{{url_for('restaurant')}}" class="btn btn-primary" style="width: 100%;">Discover More</a>
                 </div>
             </div>
         </div>
         </div>
         <div class="col-sm-3">
-          <div id="mycard" class="card" style="border-radius: 25px; margin-bottom: 15px; margin-top: 20px; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">
+          <div  id="mycard" class="card" style="border-radius: 25px; margin-bottom: 15px; margin-top: 20px; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">
             <img class="card-img-top" src = "{{ url_for('static', filename='images/doctors.jpg')}}" alt="Card image cap" style="height: 180px; border-radius: 25px 25px 0px 0px;">
             <div class="card-body" style="padding: 20px;">
                 <div style="display: flex; justify-content: space-between;">
-                    <h5  style="color: rgb(77, 76, 76); padding-right: 15px; float: left;">Health and Cosmetics</h5>
+                    <h5  style="color: rgb(77, 76, 76); padding-right: 15px; float: left;">Health and <br />Cosmetics</h5>
                 </div>
                 <div style="position: relative;">
                     <a href="#" class="btn btn-primary" style="width: 100%;">Discover More</a>
@@ -112,7 +141,7 @@
             </div>
         </div>
         </div>
-        <div class="col-sm-3">
+        <div  class="col-sm-3">
           <div id="mycard" class="card" style="border-radius: 25px; margin-bottom: 15px; margin-top: 20px; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">
             <img class="card-img-top" src = "{{ url_for('static', filename='images/stores.jpg')}}" alt="Card image cap" style="height: 180px; border-radius: 25px 25px 0px 0px;">
             <div class="card-body" style="padding: 20px;">
@@ -141,12 +170,41 @@
         </div>
       </div>
       </div>
-      
+    </section>
+    <footer id="myfooter" style="background:  #282639; height: 200px; margin-bottom: 0; padding: 0;">
+      <div class="container">
+      <div class="card-deck " style="color: white; font-weight: 100; ">
+        <div class="card text-center border-0" style="background: transparent; height: 200px;">
+          <div class="card-body" style="font-family: 'Montserrat', sans-serif;">
+            <h5 class="card-title" style="color: yellowgreen;">Get to know more about us</h5>
+            <p class="card-text">We are 3 girls pursuing B.Tech from Indira Gandhi Delhi Technical University for Women, Delhi. We enjoy technology and wish to make a change through our little efforts.</p>
+          </div>
+        </div>
+        <div class="card text-center border-0" style="background: transparent;  height: 200px;">
+          <div class="card-body" style="height: 100px; font-family: 'Montserrat', sans-serif;">
+            <h5 class="card-title" style="color: yellowgreen;">Our Objective</h5>
+            <p class="card-text">With Close-o-meter we aim to help people in this pandemic take precautions by getting live updates about crowds at different places and stay updated about health and hygienic measures</p>
+          </div>
+        </div>
+        <div class="card text-center border-0"  style="background: transparent;  height: 200px;">
+          <div class="card-body" style=" height: 100px; font-family: 'Montserrat', sans-serif;">
+            <h5 class="card-title" style="color: yellowgreen;">Get to know how we implemented it</h5>
+            <p class="card-text" style="margin-bottom: 0;">GitHub link
+            <br />
+            <br />
+            <p class="card-text"><small class="text-muted">Made By: Prashansa Gupta, Kriti Bindra and Mahima Kataria</small></p>
+          </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    </footer>
+    <script src="https://cdn.rawgit.com/michalsnik/aos/2.1.1/dist/aos.js"></script>
       <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
       <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
       <script>
-                var min = 30*60*1000;
+              var min = 30*60*1000;
         window.setInterval(function(){
            fetch('http://localhost:5000/home')
            location.reload();
@@ -155,17 +213,20 @@
           $('#drag').show(200);
           $('#part2').hide();
           document.getElementById("carousel1").style.marginLeft = "280px"
+          document.getElementById("myfooter").style.marginLeft = "280px"
           document.getElementById("main").style.marginLeft="300px";
-          document.getElementById("main1").style.marginLeft="300px";
         }
         
         function closeNav() {
             $('#drag').hide(100);
             $('#part2').show(200);
             document.getElementById("carousel1").style.marginLeft = "50px"
+            document.getElementById("myfooter").style.marginLeft = "50px"
             document.getElementById("main").style.marginLeft="50px";
-            document.getElementById("main1").style.marginLeft="189.6px";
         }
+        AOS.init({
+            easing: 'ease-in-quad',
+        });
         </script>
  
 </body>
