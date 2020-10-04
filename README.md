@@ -4,7 +4,7 @@
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes.
 
 ### Prerequisites
-Requires Nodejs and Python3 to run locally. See instructions to setup [Python3](https://www.python.org/downloads/).
+Requires Python3 to run locally. See instructions to setup [Python3](https://www.python.org/downloads/).
 
 ### Installation
 #### Frontend(React)
