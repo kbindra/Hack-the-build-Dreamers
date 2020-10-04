@@ -9,7 +9,7 @@ Health being our first priority,this project aims to solve the problem of freque
 2. Alternatively, if there is a particular hour of the day when there are very few people at the store/salon/restaurant, we would select that hour to visit the place. 
 3. Right now, there is no solution for this problem, that is, there is no way we can find out which place has how much customer-density at real time as well as any live updates about the place regarding sanitary measures followed there.
 
-#### Proposed Solution
+## Key Highlights
 Close-o-meter is an interactive web platform, where users can get to know live updates about crowds as well people’s reviews about the sanitary conditions at different places like restaurants, events, stores, malls etc and hence choose the place safest to them.
 1. Users can track people at different locations by visualising it in maps having clusters of crowd marking them with red, if number of people/area density is high, yellow for moderate density and green for safest density at different locations.
 2. Users can explore different restaurants and dining places and check-in by scanning qr code at the restaurant, other users will be able to see the number of people currently present at the restaurant.
