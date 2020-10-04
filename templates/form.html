@@ -14,19 +14,17 @@
     <section id="wholepage">
     <div id="drag">
         <section id="sideMenu">
-            <div id="heading" style="display: inline-block;">
+            <div id="heading" style="display: inl
+            ine-block;">
             <h4 style="color: #92CF48; padding: 30px 20px 10px 30px ; float: left;"> <strong>Close-o-Meter</strong></h1>
             <a href="#" onclick="closeNav()"><i class="fa fa-times" aria-hidden="true"></i></i></a>
             </div>
-            <nav>
-                <a href="{{ url_for('home') }}"><i class="fa fa-home" aria-hidden="true"></i> Dashboard</a>
-                <a href="{{ url_for('restaurant') }}"><i class="fa fa-cutlery" aria-hidden="true"></i> Restaurants & Dining</a>
-                <a href="#"><i class="fa fa-medkit" aria-hidden="true"></i>Health & Cosemetics</a>
-                <a href="#"><i class="fa fa-shopping-cart" aria-hidden="true"></i>Stores & Malls</a>
-                <a href="#"><i class="fa fa-calendar" aria-hidden="true"></i>Events and Festivities</a>
-                <a href="{{ url_for('register') }}"><i class="fa fa-sign-in" aria-hidden="true"></i> Register with Us</a>
-                <a href="{{url_for('about')}}"><i class="fa fa-id-badge" aria-hidden="true"></i> About</a>
-            </nav>
+        <nav>
+            <a href="{{ url_for('home') }}"><i class="fa fa-home" aria-hidden="true"></i> Dashboard</a>
+            <a href="{{ url_for('restaurant') }}"><i class="fa fa-cutlery" aria-hidden="true"></i> Restaurants</a>
+            <a href="#"><i class="fa fa-users" aria-hidden="true"></i> Events</a>
+            <a href="{{url_for('about')}}"><i class="fa fa-id-badge" aria-hidden="true"></i> About</a>
+        </nav>
         </section>
     </div>
     <div id="part2">

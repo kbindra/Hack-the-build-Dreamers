@@ -20,15 +20,12 @@
             <h4 style="color: #92CF48; padding: 30px 20px 10px 30px ; float: left;"> <strong>Close-o-Meter</strong></h1>
             <a href="#" onclick="closeNav()"><i class="fa fa-times" aria-hidden="true"></i></i></a>
             </div>
-            <nav>
-              <a href="{{ url_for('home') }}"><i class="fa fa-home" aria-hidden="true"></i> Dashboard</a>
-              <a href="{{ url_for('restaurant') }}"><i class="fa fa-cutlery" aria-hidden="true"></i> Restaurants & Dining</a>
-              <a href="#"><i class="fa fa-medkit" aria-hidden="true"></i>Health & Cosemetics</a>
-              <a href="#"><i class="fa fa-shopping-cart" aria-hidden="true"></i>Stores & Malls</a>
-              <a href="#"><i class="fa fa-calendar" aria-hidden="true"></i>Events and Festivities</a>
-              <a href="{{ url_for('register') }}"><i class="fa fa-sign-in" aria-hidden="true"></i> Register with Us</a>
-              <a href="{{ url_for('about') }}"><i class="fa fa-id-badge" aria-hidden="true"></i> About</a>
-          </nav>
+        <nav>
+            <a href="{{ url_for('home') }}"><i class="fa fa-home" aria-hidden="true"></i> Dashboard</a>
+            <a href="{{ url_for('restaurant') }}"><i class="fa fa-cutlery" aria-hidden="true"></i> Restaurants</a>
+            <a href="#"><i class="fa fa-users" aria-hidden="true"></i> Events</a>
+            <a href="{{url_for('about')}}"><i class="fa fa-id-badge" aria-hidden="true"></i> About</a>
+        </nav>
         </section>
     </div>
     <div id="part2">
@@ -117,7 +114,7 @@
     <h5>Please help us improve customer experience!!</h5>
     <div class="form-group">
       <label for="Rating"><h6>How would you like to rate the place?</h6></label>
-      <fieldset class="stars" style="margin-right:150px;" name="stars">
+      <fieldset class="stars" style="margin-right:150px;" name="stars" required>
       <input type="radio" name="stars" id="star1" ontouchstart="ontouchstart"/>
       <label class="fa fa-star" for="star1"></label>
       <input type="radio" name="stars" id="star2" ontouchstart="ontouchstart"/>
@@ -134,15 +131,15 @@
     <label for="Exp"><h6>Is the place following Safety Guidelines?</h6></label>
     <br>
     <div class="form-check ch1 form-check-inline">
-        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
+        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1" >
         <label class="form-check-label" for="inlineRadio1">Not at All</label>
       </div>
       <div class="form-check ch1 form-check-inline">
-        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
+        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2" >
         <label class="form-check-label" for="inlineRadio2">Not so much</label>
       </div>
       <div class="form-check ch1 form-check-inline">
-        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3" value="option3">
+        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3" value="option3" required>
         <label class="form-check-label" for="inlineRadio3">Very Much</label>
       </div>
     </div>
@@ -150,15 +147,15 @@
       <label for="Exp"><h6>Is the place crowded?</h6></label>
       <br>
     <div class="form-check ch2 form-check-inline">
-        <input class="form-check-input" type="radio" name="inlineRadioOptions1" id="inlineRadio1" value="option1">
+        <input class="form-check-input" type="radio" name="inlineRadioOptions1" id="inlineRadio1" value="option1" >
         <label class="form-check-label" for="inlineRadio1">Not at All</label>
       </div>
       <div class="form-check ch2 form-check-inline">
-        <input class="form-check-input" type="radio" name="inlineRadioOptions1" id="inlineRadio2" value="option2">
+        <input class="form-check-input" type="radio" name="inlineRadioOptions1" id="inlineRadio2" value="option2" >
         <label class="form-check-label" for="inlineRadio2">Not so much</label>
       </div>
       <div class="form-check ch2 form-check-inline">
-        <input class="form-check-input" type="radio" name="inlineRadioOptions1" id="inlineRadio3" value="option3">
+        <input class="form-check-input" type="radio" name="inlineRadioOptions1" id="inlineRadio3" value="option3" required>
         <label class="form-check-label" for="inlineRadio3">Very Much</label>
       </div>
     </div>
@@ -166,31 +163,31 @@
       <label for="Exp"><h6>Is the place regularly sanitized?</h6></label>
       <br>
     <div class="form-check ch3 form-check-inline">
-        <input class="form-check-input" type="radio" name="inlineRadioOptions2" id="inlineRadio1" value="option1">
+        <input class="form-check-input" type="radio" name="inlineRadioOptions2" id="inlineRadio1" value="option1" >
         <label class="form-check-label" for="inlineRadio1">Not at All</label>
       </div>
       <div class="form-check ch3 form-check-inline">
-        <input class="form-check-input" type="radio" name="inlineRadioOptions2" id="inlineRadio2" value="option2">
+        <input class="form-check-input" type="radio" name="inlineRadioOptions2" id="inlineRadio2" value="option2" >
         <label class="form-check-label" for="inlineRadio2">Not so much</label>
       </div>
       <div class="form-check ch3 form-check-inline">
-        <input class="form-check-input" type="radio" name="inlineRadioOptions2" id="inlineRadio3" value="option3">
+        <input class="form-check-input" type="radio" name="inlineRadioOptions2" id="inlineRadio3" value="option3" required>
         <label class="form-check-label" for="inlineRadio3">Very Much</label>
       </div>
     </div>
     <div class="form-group">
       <label for="Exp"><h6>Is social Distancing followed?</h6></label>
       <br>
-    <div class="form-check ch4 form-check-inline">
-        <input class="form-check-input" type="radio" name="inlineRadioOptions3" id="inlineRadio1" value="option1">
+    <div class="form-check ch4 form-check-inline" >
+        <input class="form-check-input" type="radio" name="inlineRadioOptions3" id="inlineRadio1" value="option1" required>
         <label class="form-check-label" for="inlineRadio1">Not at All</label>
       </div>
       <div class="form-check ch4 form-check-inline">
-        <input class="form-check-input" type="radio" name="inlineRadioOptions3" id="inlineRadio2" value="option2">
+        <input class="form-check-input" type="radio" name="inlineRadioOptions3" id="inlineRadio2" value="option2" >
         <label class="form-check-label" for="inlineRadio2">Not so much</label>
       </div>
       <div class="form-check ch4 form-check-inline">
-        <input class="form-check-input" type="radio" name="inlineRadioOptions3" id="inlineRadio3" value="option3">
+        <input class="form-check-input" type="radio" name="inlineRadioOptions3" id="inlineRadio3" value="option3" >
         <label class="form-check-label" for="inlineRadio3">Very Much</label>
       </div>
     </div>
@@ -313,6 +310,8 @@
        AOS.init({
             easing: 'ease-in-quad',
         });
+
+        //feedback form
         $(function() {
         $('#feedback').hide();
         $('#checkout').click(function (e) {
@@ -324,6 +323,25 @@
         $('#fbsubmit').click(function (e) {
         $('#feedback').fadeOut(700);
         $('#wholepage').removeClass('blur-filter');
+
+        //form submission
+        (function() {
+          'use strict';
+          window.addEventListener('load', function() {
+            // Fetch all the forms we want to apply custom Bootstrap validation styles to
+            var forms = document.getElementsByClassName('needs-validation');
+            // Loop over them and prevent submission
+            var validation = Array.prototype.filter.call(forms, function(form) {
+              form.addEventListener('submit', function(event) {
+                if (form.checkValidity() === false) {
+                  event.preventDefault();
+                  event.stopPropagation();
+                }
+                form.classList.add('was-validated');
+              }, false);
+            });
+          }, false);
+        })();
     });
 });
         </script>

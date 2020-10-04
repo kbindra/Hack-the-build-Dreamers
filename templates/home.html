@@ -16,13 +16,10 @@
         <a href="#" onclick="closeNav()"><i class="fa fa-times" aria-hidden="true"></i></i></a>
         </div>
     <nav>
-            <a href="{{ url_for('home') }}"><i class="fa fa-home" aria-hidden="true"></i> Dashboard</a>
-            <a href="{{ url_for('restaurant') }}"><i class="fa fa-cutlery" aria-hidden="true"></i> Restaurants & Dining</a>
-            <a href="#"><i class="fa fa-medkit" aria-hidden="true"></i>Health & Cosemetics</a>
-            <a href="#"><i class="fa fa-shopping-cart" aria-hidden="true"></i>Stores & Malls</a>
-            <a href="#"><i class="fa fa-calendar" aria-hidden="true"></i>Events and Festivities</a>
-            <a href="{{ url_for('register') }}"><i class="fa fa-sign-in" aria-hidden="true"></i> Register with Us</a>
-            <a href="{{ url_for('about') }}"><i class="fa fa-id-badge" aria-hidden="true"></i> About</a>
+            <a href="#"><i class="fa fa-home" aria-hidden="true"></i> Dashboard</a>
+            <a href="{{ url_for('restaurant') }}"><i class="fa fa-cutlery" aria-hidden="true"></i> Restaurants</a>
+            <a href="{{ url_for('feedback') }}"><i class="fa fa-users" aria-hidden="true"></i> Events</a>
+            <a href="{{url_for('about')}}"><i class="fa fa-id-badge" aria-hidden="true"></i> About</a>
         </nav>
         </section>
     </div>
@@ -31,14 +28,7 @@
         <a href="javascript:void(0)" onclick="openNav()"><i class="fa fa-bars" aria-hidden="true"></i></a>
     </section>
     </div>
-    <div class="container" id="header"> 
-        CLOSE-O-METER
-    </div>
-    <div class="container" id="main" style="margin-top: 0px;margin-left: 50px; margin-right: 50px;">
-
-      <div class="row" style="margin-left: 5px; margin-right: 5px;width: 1400px;background-color: black; background-size: 100%;" id="mainrow">
-        <div class="col" style="margin-top: 5px;">
-      <div id="carousel1">
+      <div id="carousel1" style="margin-top: 0; margin-left: 50px; margin-right: 0; ">
         <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
           <ol class="carousel-indicators">
             <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
@@ -47,14 +37,33 @@
           </ol>
           <div class="carousel-inner">
             <div class="carousel-item active">
-              <img id="cimg" class="d-block" src="{{ url_for('static', filename='images/slide1.jpeg') }}" alt="First slide">
+              <img id="cimg" class="d-block" src="{{ url_for('static', filename='images/slide1.jpeg') }}" alt="First slide" style="width: 100%; height: 400px;">
             </div>
             <div class="carousel-item">
-              <img id="cimg" class="d-block" src="{{ url_for('static', filename='images/slide2.jpeg') }}" alt="Second slide">
+              <div class="card bg-dark text-white">
+                <img src="{{ url_for('static', filename='images/crowd.jpg') }}" class="card-img" alt="..." style="width: 100%; height: 400px; opacity: 0.5;">
+                <div class="card-img-overlay">
+                  <h5 class="card-title" style="font-size: 1.8rem;">Social distancing guidelines</h5>
+                  <p class="card-text" style="font-size: 1.3rem; margin-top: 50px;">1.Restaurants to ensure handwashing protocol and proper cleanliness of frequently
+                    touched surfaces. Ensure physical distancing (minimum 1metre) between tables;
+                    encourage open air seating where practical with adequate distancing. </p>
+                    <p class="card-text" style="font-size: 1.3rem;">2.All commercial activities must keep a distance of one meter between customers.
+                      Measures to reduce peak hour crowding in markets/stores. </p>
+                      <p class="card-text" style="font-size: 1.3rem;">
+                        3.Hygiene and physical distancing has to be maintained. Shaking hands and hugging as
+  a matter of greeting to be avoided.
+                      </p>
+                      <p class="card-text"><small>Credits: Ministry of Health & Family Welfare </small> </p>
+                </div>
+              </div>
+              
             </div>
             <div class="carousel-item">
-              <img id="cimg" class="d-block" src="{{ url_for('static', filename='images/slide3.jpeg') }}" alt="Third slide">
+              <img id="cimg" class="d-block" src="{{ url_for('static', filename='images/slide3.jpeg') }}" alt="Third slide" style="width: 100%; height: 400px;">
             </div>
+            <div class="carousel-item">
+              <img id="cimg" class="d-block" src="{{ url_for('static', filename='images/slide2.jpeg') }}" alt="Second slide" style="width: 100%; height: 400px;">
+          </div>
           </div>
           <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -66,14 +75,11 @@
           </a>
         </div>
       </div>
-      </div>
-      </div>
-    </div>
     <div class="container" id="main1">
       <div class="row" style="margin-left:40px; margin-top: 25px;">
         <h2>Stay Updated with Most Crowded and Least Crowded Places</h2>
         <div id="map" style="box-shadow:0 4px 6px 0 rgba(0, 0, 0, 0.2);">
-          <img width="600" src="{{ url_for('static', filename='images/map1.png') }}">
+          <img width="600" src="{{ url_for('static', filename='images/map.png') }}">
         </div>
       </div>
        <div class="row" style="margin-left:40px; margin-top: 25px;">
@@ -148,6 +154,7 @@
         function openNav() {
           $('#drag').show(200);
           $('#part2').hide();
+          document.getElementById("carousel1").style.marginLeft = "280px"
           document.getElementById("main").style.marginLeft="300px";
           document.getElementById("main1").style.marginLeft="300px";
         }
@@ -155,6 +162,7 @@
         function closeNav() {
             $('#drag').hide(100);
             $('#part2').show(200);
+            document.getElementById("carousel1").style.marginLeft = "50px"
             document.getElementById("main").style.marginLeft="50px";
             document.getElementById("main1").style.marginLeft="189.6px";
         }
