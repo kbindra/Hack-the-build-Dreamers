@@ -33,7 +33,7 @@ Requires Python3 to run locally. See instructions to setup [Python3](https://www
 * Setup virtual environment
 ```
 1.pip install virtualenv
-2.virtualenv venv 
+2.virtualenv env 
 3.env/Scripts/activate
 ```
 * Install all dependencies
