@@ -1,6 +1,6 @@
 # Hack-the-Build-Dreamers-
 An initiative to measure crowd and ensure safety at various places (restaurants, stores, hospitals, events, etc.) before visiting them.
-
+Made by: Mahima, Kriti, Prashansa
 ## Problem it solves
 PROBLEM IT SOLVES:
 Health being our first priority,this project aims to solve the problem of frequent human contact at heavily crowded places in the wake of the Corona Virus Pandemic and help minimize social contanct.
