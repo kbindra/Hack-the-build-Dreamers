@@ -10,7 +10,7 @@ Requires Python3 to run locally. See instructions to setup [Python3](https://www
 #### Frontend(React)
 * Clone the repository in a folder and write the following commands
 ```
-1.git clone https://github.com/WooTechnology/DINE-IN.git
+1.git clone https://github.com/kbindra/Hack-the-build-Dreamers.git
 
 ```
 #### Backend(Flask)
