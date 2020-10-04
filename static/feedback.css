@@ -1,130 +1,5 @@
-@import url(
-    'https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 
-* {
-  margin: 0;
-  padding: 0;
-  font-family: 'Roboto', sans-serif;
-}
-
-body {
-    background: #EAEDF3;
-}
-#sideMenu {
-    background: #302D43;
-    width: 280px;
-    height: 100%;
-    position: fixed;
-    overflow-x: hidden;
-    top: 0;
-    bottom: 0;
-    transition: 0.8s;
-  }
-  
-  #sideMenu nav {
-    padding-top: 10px;
-  }
-  
-  #sideMenu nav a{
-    display: block;
-    position: relative;
-    text-decoration: none;
-    color: #EAEDF3;
-    padding: 15px 30px;
-  }
-  
-  #sideMenu nav a i{
-     color: #92CF48;
-     font-size: 1.2rem;
-     margin-right: 0.8rem;
-     display: inline-block;
-     position: relative;
-     top: 2px;
-     width: 30px;
-  }
-  
-  #sideMenu nav a:active{
-    background: #282639;
-    border-left: 5px solid #92CF48;
-    padding: 15px 30px 15px 25px;
-  }
-  
-  #sideMenu nav a:hover{
-    background: #282639;
-    border-left: 5px solid #92CF48;
-    padding: 15px 30px 15px 25px;
-  }
-  
-  #sideMenu div a{
-    position: absolute;
-    top: 0;
-    right: 25px;
-    color: #EAEDF3;
-    font-size: 1.5rem;
-    padding: 20px 10px;
-  }
-  
-  #drag {
-    display: none;
-  }
-  
-  #drag-right {
-    background: #302D43;
-    width: 50px;
-    position: fixed;
-    overflow-x: hidden;
-    top: 0;
-    bottom: 0;
-  }
-  
-  #drag-right a{
-    color: #EAEDF3;
-    padding: 30px 10px;
-    font-size: 1.8rem;
-  }
-
-header {
-    background: white;
-    margin-left: 50px;
-    padding: 10px;
-    box-shadow: 0 4px 6px 0 rgba(0, 0, 0, 0.2);
-}
-
-.tablist li{
-    display: inline-block;
-}
-
-.search{
-  display: inline-block;
-}
-
-.user-field{
-  display: inline-block;
-  float: right;
-  padding: 10px;
-}
-
-.user-field i{
-  color: #302D43;
-  font-size: 1.2rem;
-}
-
-@keyframes float {
-    0% {
-    -webkit-transform: translateY(0);
-    transform: translateY(0);
-    }
-    50% {
-    -webkit-transform: translateY(-6px);
-    transform: translateY(-6px);
-    }
-    100% {
-    -webkit-transform: translateY(0);
-    transform: translateY(0);
-    }
-    }
-    
-  #feedback [class*="fontawesome-"]:before {
+  [class*="fontawesome-"]:before {
     font-family: 'FontAwesome', sans-serif;
     position: absolute;
     top: 0;
@@ -192,7 +67,7 @@ header {
       display: none;
   }
 
-  #feedback i {
+  i {
     position: absolute;
     top: 50%;
     display: block;
@@ -201,13 +76,13 @@ header {
     border-radius: 100%;
     background: #f0f0f0;
   }
-  #feedback i:nth-child(1) {
+  i:nth-child(1) {
     left: 30%;
   }
-  #feedback i:nth-child(2) {
+  i:nth-child(2) {
     right: 30%;
   }
-  #feedback u {
+  u {
     position: absolute;
     right: 0;
     bottom: 25%;
@@ -219,7 +94,7 @@ header {
     border: 6px solid #f0f0f0;
     border-radius: 100%;
   }
-  #feedback u:before, u:after {
+  u:before, u:after {
     content: "";
     position: absolute;
     top: 15px;
@@ -229,17 +104,17 @@ header {
     border-radius: 60px 60px 0 0;
     z-index: 2;
   }
-  #feedback u:before {
+  u:before {
     left: -5px;
     -webkit-transform: rotate(-32deg);
             transform: rotate(-32deg);
   }
-  #feedback u:after {
+  u:after {
     right: -5px;
     -webkit-transform: rotate(32deg);
             transform: rotate(32deg);
   }
-  #feedback  u .cover {
+  u .cover {
     position: absolute;
     top: -6px;
     left: -6px;
@@ -305,6 +180,18 @@ header {
     }
   }
   
+.blur-in {
+    -webkit-animation: blur 2s forwards;
+    -moz-animation: blur 2s forwards;
+    -o-animation: blur 2s forwards;
+    animation: blur 2s forwards;
+}
+.blur-out {
+    -webkit-animation: blur-out 2s forwards;
+    -moz-animation: blur-out 2s forwards;
+    -o-animation: blur-out 2s forwards;
+    animation: blur-out 2s forwards;
+}
 .blur-filter {
     -webkit-filter: blur(2px);
     -moz-filter: blur(2px);
@@ -312,19 +199,11 @@ header {
     -ms-filter: blur(2px);
     filter: blur(2px);
 }
-
-.blur-out {
-  -webkit-animation: blur-out 2s forwards;
-  -moz-animation: blur-out 2s forwards;
-  -o-animation: blur-out 2s forwards;
-  animation: blur-out 2s forwards;
-}
-
 .fix-position{
-  top: 50%;
-  left: 50%;
-  z-index: 2;
-  background-color: white;
-  position: fixed;
-  transform: translate(-50%,-50%);
+    top: 50%;
+    left: 50%;
+    z-index: 2;
+    background-color: white;
+    position: absolute;
+    transform: translate(-50%,-50%);
 }

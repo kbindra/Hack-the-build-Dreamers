@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en" style="min-height: 100%;">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>LOGIN</title>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="//ajax.googleapis.com/ajax/libs/jquerymobile/1.4.2/jquery.mobile.min.css" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='registration.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='main.css') }}">
+
+    <!-- <link rel="stylesheet" href="/stylesheets/header.css"> -->
+    
+    <!-- <script src="../public/scripts/connect.js"></script> -->
+    <!-- <script src="../public/scripts/login.js"></script> -->
+</head>
+<body style="background-image: linear-gradient(to top left, rgba(89, 105, 196, 0.52), #598d4cba),url('/static/images/register.jpg');background-size: cover;">
+    <br><br>
+    <div id="drag">
+        <section id="sideMenu">
+          <div id="heading" style="display: inline-block;">
+          <h4 style="color: #92CF48; padding: 30px 20px 10px 30px ; float: left;"> <strong>Close-o-Meter</strong></h1>
+          <a href="#" onclick="closeNav()"><i class="fa fa-times" aria-hidden="true"></i></i></a>
+          </div>
+      <nav>
+              <a href="{{ url_for('home') }}"><i class="fa fa-home" aria-hidden="true"></i> Dashboard</a>
+              <a href="{{ url_for('restaurant') }}"><i class="fa fa-cutlery" aria-hidden="true"></i> Restaurants & Dining</a>
+              <a href="#"><i class="fa fa-medkit" aria-hidden="true"></i>Health & Cosemetics</a>
+              <a href="#"><i class="fa fa-shopping-cart" aria-hidden="true"></i>Stores & Malls</a>
+              <a href="#"><i class="fa fa-calendar" aria-hidden="true"></i>Events and Festivities</a>
+              <a href="{{ url_for('register') }}"><i class="fa fa-sign-in" aria-hidden="true"></i> Register with Us</a>
+              <a href="{{ url_for('about') }}"><i class="fa fa-id-badge" aria-hidden="true"></i> About</a>
+          </nav>
+          </section>
+      </div>
+      <div id="part2">
+      <section id="drag-right">
+          <a href="javascript:void(0)" onclick="openNav()"><i class="fa fa-bars" aria-hidden="true"></i></a>
+      </section>
+      </div>
+  <div class="text-center" style="font-weight: bolder; font-size: 30px;">
+    REGISTER WITH CLOSE-O-METER
+  </div>
+  <div class="container border rounded p-4" style="width: 500px;margin-top: 20px; ">
+    <div class="row">
+			<div class="col-md-12">
+				<div class="panel panel-login">
+					<div class="panel-heading">
+						<div class="row">
+                            <div class="col-md-12 text-center">
+								<a href="#" class="active" id="admin-form-link"><h4>REGISTER</h4></a>
+							</div>
+						</div>
+						<hr>
+					</div>
+					<div class="panel-body">
+						<div class="row">
+							<div class="col-lg-12">
+								<form id="admin-form" action="/login/admin" method="post" role="form" style="display: block;">
+									<div class="form-group">
+										<input type="text" name="name" id="name" class="form-control" placeholder="Name of the Place" required>
+                                    </div>
+                                    <div class="row form-group">
+                                        <div class="col">
+                                            <input type="number" name="latitude" id="latitude" class="form-control" placeholder="Latitude" required>
+                                        </div>
+                                        <div class="col">
+                                            <input type="number" name="longitude" id="longitude" class="form-control" placeholder="Longitude" required>
+                                        </div>
+                                      </div>									                              
+									<div class="form-group">
+										<input type="text" name="city" id="city" class="form-control" placeholder="City" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="Exp"><h6 style="color: white;">Type of place</h6></label>
+                                        <br>
+                                      <div class="form-check ch4 form-check-inline">
+                                          <input class="form-check-input" type="radio" name="inlineRadioOptions3" id="inlineRadio1" value="option1" required>
+                                          <label class="form-check-label" for="inlineRadio1"><h6 style="color: white;">Restaurants and Dining</h6></label>
+                                        </div>
+                                        <div class="form-check ch4 form-check-inline">
+                                          <input class="form-check-input" type="radio" name="inlineRadioOptions3" id="inlineRadio2" value="option2">
+                                          <label class="form-check-label" for="inlineRadio2"><h6 style="color: white;">Health and Cosmetics</h6></label>
+                                        </div>
+                                        <div class="form-check ch4 form-check-inline">
+                                          <input class="form-check-input" type="radio" name="inlineRadioOptions3" id="inlineRadio3" value="option3">
+                                          <label class="form-check-label" for="inlineRadio3"><h6 style="color: white;">Events and Festivals</h6></label>
+                                        </div>                                        
+                                        <div class="form-check ch4 form-check-inline">
+                                            <input class="form-check-input" type="radio" name="inlineRadioOptions3" id="inlineRadio3" value="option3">
+                                            <label class="form-check-label" for="inlineRadio3""><h6 style="color: white;">Departmental Stores and Malls</h6></label>
+                                          </div>
+                                      </div>
+                                    <div class="form-group">
+                                        <textarea class="form-control" rows="3.5" id="comment" placeholder="Write something about your place"></textarea>
+                                    </div>
+                                    <div class="form-group row" style="margin-left: 80px; ">
+                                        <h5 style="color: white;"> Add an image of your place </h5>
+                                        <input type="file" id="img" name="img" accept="image/*" style="color: white;" required>
+                                    </div>                                    
+									<div class="text-center">
+                    <button type="submit" class="btn btn-primary" style="width: 50%;">LOGIN</button>
+                    </form>
+                  </div>
+							</div>
+						</div>
+					</div>
+				</div>
+    
+    
+</div><!-- container-->
+<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+<script>
+    var min = 30*60*1000;
+window.setInterval(function(){
+fetch('http://localhost:5000/home')
+location.reload();
+},min);
+function openNav() {
+$('#drag').show(200);
+$('#part2').hide();
+document.getElementById("main").style.marginLeft="300px";
+document.getElementById("main1").style.marginLeft="300px";
+}
+
+function closeNav() {
+$('#drag').hide(100);
+$('#part2').show(200);
+document.getElementById("main").style.marginLeft="50px";
+document.getElementById("main1").style.marginLeft="189.6px";
+}
+</script>
+</body>
+</html>

@@ -10,6 +10,13 @@
 body {
     background: #EAEDF3;
 }
+
+#wholepage.active {
+  filter: blur(20px);
+  pointer-events: none;
+  user-select: none;
+}
+
 #sideMenu {
     background: #302D43;
     width: 280px;
@@ -118,4 +125,35 @@ header {
 .user-field i{
     color: #302D43;
     font-size: 1.2rem;
+}
+
+#popqrscan {
+  position: fixed;
+  top: 40%;
+  left: 50%;
+  border-radius: 20%;
+  transform: translate(-50%,-50%);
+  width: 450px;
+  height: 450px;
+  background: white;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  visibility: hidden;
+  opacity: 0;
+  transition: 0.5s;
+}
+
+#popqrscan.active{
+  top: 50%;
+  visibility: visible;
+  opacity: 1;
+  transition: 0.5s;
+}
+
+#qr-canvas{
+   width: 350px;
+   padding-left: 0;
+   padding-right: 0;
+   border: 5px solid black;
+   margin: auto;
+   display: block;
 }

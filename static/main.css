@@ -9,13 +9,13 @@
 
 body {
     background: #F4F6F9;
+    background-size: cover;
+      background-image: url('/static/images/bg1.jpg');
+      background-repeat: no-repeat;
+      background-attachment: fixed;
 }
 
-#wholepage.active {
-   filter: blur(20px);
-   pointer-events: none;
-   user-select: none;
-}
+
 
 #main {
   margin-top: 250px;
@@ -103,36 +103,41 @@ body {
 #mycard:hover {
   transform: scale(1.085); 
 }
-
-#popqrscan {
-  position: fixed;
-  top: 40%;
-  left: 50%;
-  border-radius: 20%;
-  transform: translate(-50%,-50%);
-  width: 450px;
-  height: 450px;
-  background: white;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-  visibility: hidden;
-  opacity: 0;
-  transition: 0.5s;
+#carousel1 {
+  margin-top: 15px;
+  height: 400px;
+  margin-left: 40px;
 }
-
-#popqrscan.active{
-  top: 50%;
-  visibility: visible;
-  opacity: 1;
-  transition: 0.5s;
+.carousel-item img {
+  width: 1300px;
+  height: 350px;
+  border-radius: 25px;
 }
-
-#qr-canvas{
-   width: 350px;
-   padding-left: 0;
-   padding-right: 0;
-   border: 5px solid black;
-   margin: auto;
-   display: block;
+#header {
+  margin-top: 10px;
+  font-size: 60px;
+  font-weight: 800;
+  /* color: #396971; */
+  color: black;
+  text-shadow: 4px 4px rgba(0, 0, 0, 0.15);
+  display: flex;
+  justify-content: center;
+}
+.car_caption {
+  background-color: #396971d2;
+  color: white;
+  padding-left: 5px;
+  padding-right: 5px;
+  font-size: 20px;
+  /* border-radius: 35%; */
+}
+#map img {
+  height: 400px;
+  width: 100%; 
+ }
+ #map1 {
+  height: 400px;
+  width:100%
 }
 
 @keyframes bounce {

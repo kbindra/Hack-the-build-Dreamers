@@ -4,24 +4,29 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{{ url_for('static', filename='form.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <title>Close-o-Meter</title>
 </head>
 <body>
+    <section id="wholepage">
     <div id="drag">
         <section id="sideMenu">
             <div id="heading" style="display: inline-block;">
             <h4 style="color: #92CF48; padding: 30px 20px 10px 30px ; float: left;"> <strong>Close-o-Meter</strong></h1>
             <a href="#" onclick="closeNav()"><i class="fa fa-times" aria-hidden="true"></i></i></a>
             </div>
-        <nav>
-            <a href="{{ url_for('home') }}"><i class="fa fa-home" aria-hidden="true"></i> Dashboard</a>
-            <a href="{{ url_for('restaurant') }}"><i class="fa fa-cutlery" aria-hidden="true"></i> Restaurants</a>
-            <a href="#"><i class="fa fa-users" aria-hidden="true"></i> Events</a>
-            <a href="#"><i class="fa fa-id-badge" aria-hidden="true"></i> About</a>
-        </nav>
+            <nav>
+                <a href="{{ url_for('home') }}"><i class="fa fa-home" aria-hidden="true"></i> Dashboard</a>
+                <a href="{{ url_for('restaurant') }}"><i class="fa fa-cutlery" aria-hidden="true"></i> Restaurants & Dining</a>
+                <a href="#"><i class="fa fa-medkit" aria-hidden="true"></i>Health & Cosemetics</a>
+                <a href="#"><i class="fa fa-shopping-cart" aria-hidden="true"></i>Stores & Malls</a>
+                <a href="#"><i class="fa fa-calendar" aria-hidden="true"></i>Events and Festivities</a>
+                <a href="{{ url_for('register') }}"><i class="fa fa-sign-in" aria-hidden="true"></i> Register with Us</a>
+                <a href="{{url_for('about')}}"><i class="fa fa-id-badge" aria-hidden="true"></i> About</a>
+            </nav>
         </section>
     </div>
     <div id="part2">
@@ -32,7 +37,7 @@
     <header id="search-area">
         <div class="search">
             <a href="#"><i class="fa fa-search" aria-hidden="true"></i></a>
-            <input type="text" name="" value="" placeholder="Search for restaurants that are safe for you to visit">
+            <input type="text" name="" value="" placeholder="Search for places that are safe for you to visit">
         </div>
         <div class="user-field">
             <div class="user-email" style="color: rgb(122, 121, 121)"><i class="fa fa-user-circle-o" aria-hidden="true"></i> {{ session['email'] }}</div>
@@ -41,23 +46,30 @@
     <div class="container" id="content" style="margin-top: 30px; margin-bottom: 100px; ">
         <div class="row">
             <div class="col-8">
-                <div class="card" style="box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">
+                <div  class="card border-0" style="box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">
                     <img class="card-img-top" src="{{ res.img_src }}" alt="Card image cap">
                     <div class="card-body" >
-                      <h5 class="card-title", style="display: inline-block;">{{ res.name }}</h5>
-                      <h6 class="text-right"  style="color: rgb(104, 104, 100); font-size: 14px; display: inline-block; float: right;"><i style="font-size: 1.2rem; color: yellow" class="fa fa-users" aria-hidden="true"></i> {{ res.people }} are currently here </h6>
-                      <i style="color: yellow; font-size: 1.2rem;" class="fa fa-star" aria-hidden="true">{{ res.rating }} Safety/Precautions</i> 
-                      <p class="card-text">{{ res.city }}</p>
-                      <button type="button" class="btn btn-danger">{{ res.description }}</button>
+                      <h5 class="card-title", style="display: inline-block; font-size: 2rem; font-family: 'Montserrat', sans-serif;">{{ res.name }}</h5>
+                      {% if res.people > 35 %}
+                      <h6 class="text-right"  style="color: rgb(104, 104, 100); font-size: 14px; display: inline-block; float: right;"><i style="font-size: 1.2rem; color: rgb(211, 51, 51)" class="fa fa-users" aria-hidden="true"></i> {{ res.people }} are currently here </h6>
+                      {%elif res.people > 15%}
+                      <h6 class="text-right"  style="color: rgb(104, 104, 100); font-size: 14px; display: inline-block; float: right;"><i style="font-size: 1.2rem; color: rgb(255, 255, 0)" class="fa fa-users" aria-hidden="true"></i> {{ res.people }} are currently here </h6>
+                      {%else%}
+                      <h6 class="text-right"  style="color: rgb(104, 104, 100); font-size: 14px; display: inline-block; float: right;"><i style="font-size: 1.2rem; color: rgb(58, 202, 58)" class="fa fa-users" aria-hidden="true"></i> {{ res.people }} are currently here </h6>
+                      {% endif %}
+                      <p class="card-text"><i style="color: yellow; font-size: 1.2rem;" class="fa fa-star" aria-hidden="true">{{ res.rating }} Safety/Precautions</i></p>
+                      <p class="card-text" style="font-size: 1.3rem; font-family: 'Montserrat', sans-serif;">{{ res.city }}</p>
+                      <button type="button" class="btn btn-danger" style="font-size: 1.3rem; font-family: 'Montserrat', sans-serif">{{ res.description }}</button>
                       <br />
-                      <div id="#shadow" style="-webkit-box-shadow: 0 6px 4px -4px  rgba(0, 0, 0, 0.2);-moz-box-shadow: 0 6px 4px -4px  rgba(0, 0, 0, 0.2); box-shadow: 0 6px 4px -4px  rgba(0, 0, 0, 0.2);"><h6 style="color: rgb(190, 33, 33); padding-top: 10px; padding-bottom: 5px;"><strong>Overview</strong></h6></div>
-                      <p class="card-text">
+                      <div style="-webkit-box-shadow: 0 6px 4px -4px  rgba(0, 0, 0, 0.2);-moz-box-shadow: 0 6px 4px -4px  rgba(0, 0, 0, 0.2); box-shadow: 0 6px 4px -4px  rgba(0, 0, 0, 0.2);"><h6 style="color: rgb(190, 33, 33); padding-top: 10px; padding-bottom: 5px;"><strong>Overview</strong></h6></div>
+                      <p class="card-text" style="font-family: 'Montserrat', sans-serif;">
                           Lorem ipsum dolor sit amet, 
                           consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
                           Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
                           Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. 
                           Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
                       </p>
+                      {% if res.reviews|length > 0 %}
                       <div id="#shadow"><h6 style="color: rgb(190, 33, 33); padding-top: 10px; padding-bottom: 5px;"><strong>Reviews</strong></h6></div>
                            {% for review in res.reviews %}
                             <div class="card" style="margin-bottom: 5px;">
@@ -70,19 +82,17 @@
                                 </div>
                             </div>
                             {% endfor %}
-                            
-                        
+                        {%endif%}
                     </div>
                   </div>
             </div>
             <div class="col-4">
                 <div class="card" style="box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">
-                    <div class="card-header" style="background: #007bff; color: white; text-align: center;">
+                    <div class="card-header" style="background: #302D43; color: white; text-align: center;">
                         Check-In
                      </div>
                     <div class="card-body">
                       <p class="card-text" style="text-align: center; color: rgb(133, 132, 132);">{{ session['email'] }}</p>
-                      <form action="http://localhost:5000/checkout" method="POST">
                         <div class="form-group">
                             <label for="exampleFormControlSelect1">No. of people</label>
                             <select class="form-control" id="exampleFormControlSelect1" name="customers">
@@ -105,13 +115,21 @@
                               <option>More than 4 hours</option>
                             </select>
                           </div>
-                      <button class="btn btn-primary" type="submit" >Continue</button>
-                    </form>
+                      <button class="btn btn-primary" onclick="toggle()" style="background: #302D43;">Continue</button>
                     </div>
                   </div>
             </div>
         </div>
     </div>
+    </section>
+    <div id="popqrscan">
+        <h2 style="text-align: center; padding-top: 10px;">QR Code Scan</h2>
+        <canvas id="qr-canvas" ></canvas>
+        <div style="text-align: center; padding-top: 20px; color: #302D43; font-size: 30px;">
+            <a href="#" class="btn btn-primary" onclick="second_toggle()" style="position: relative; margin: auto;">Close</a>
+        </div>
+    </div>
+    <script src="https://rawgit.com/sitepoint-editors/jsqrcode/master/src/qr_packed.js"></script>
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
     <script>
         function openNav() {
@@ -127,6 +145,83 @@
             document.getElementById("search-area").style.marginLeft = "50px";
             document.getElementById("content").style.marginLeft = "200px";
         }
+
+        const canvasElement = document.getElementById("qr-canvas");
+        const video = document.createElement("video");
+        const canvas = canvasElement.getContext("2d");
+        var more_customers = 0;
+
+        function second_toggle(){
+            var blur = document.getElementById('wholepage');
+            blur.classList.toggle('active');
+            scanning = false;
+            video.srcObject.getTracks().forEach(track => {
+            track.stop();
+            });
+            canvasElement.hidden = true;
+            var pop = document.getElementById('popqrscan');
+            pop.classList.toggle('active');
+        }
+
+        function toggle(){
+            more_customers = document.getElementById('exampleFormControlSelect1').value;
+            console.log(more_customers)
+            var blur = document.getElementById('wholepage');
+            blur.classList.toggle('active');
+            navigator.mediaDevices
+            .getUserMedia({ video: { facingMode: "environment" } })
+            .then(function(stream) {
+                scanning = true;
+                canvasElement.hidden = false;
+                video.setAttribute("playsinline", true); // required to tell iOS safari we don't want fullscreen
+                video.srcObject = stream;
+                video.play();
+                tick();
+                scan();
+           });
+           var pop = document.getElementById('popqrscan');
+           pop.classList.toggle('active');
+        }
+
+        function tick() {
+            canvasElement.height = video.videoHeight;
+            canvasElement.width = video.videoWidth;
+            canvas.drawImage(video, 0, 0, canvasElement.width, canvasElement.height);
+
+            scanning && requestAnimationFrame(tick);
+        }
+
+        function scan() {
+            try {
+                qrcode.decode();
+            } catch (e) {
+                setTimeout(scan, 300);
+            }
+        }
+
+        qrcode.callback = res => {
+            if (res) {
+                scanning = false;
+
+                video.srcObject.getTracks().forEach(track => {
+                track.stop();
+                });
+                canvasElement.hidden = true;
+                const data = {'new_customers': more_customers}
+                fetch(`http://localhost:5000/checkout`, {
+                    method: "POST",
+                    headers: {
+                    "Content-Type": "application/json"
+                    },
+                    body: JSON.stringify(data)
+                }).then( res => {
+                    if(res.ok){
+                        window.location.replace("{{ url_for('checkout') }}")
+                    }
+                }); 
+            }
+        };
+
         </script>
 </body>
 </html>

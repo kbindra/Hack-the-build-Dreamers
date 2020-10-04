@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='feedback.css') }}">
+    <!-- <link rel="stylesheet" href="/static/feedback.css"> -->
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="//ajax.googleapis.com/ajax/libs/jquerymobile/1.4.2/jquery.mobile.min.css" />
+    <title>Close-o-Meter</title>
+</head>
+<body>
+               <form style="border-color:transparent; padding: 15px; width: 480px; box-shadow:0 4px 6px 0 rgba(0, 0, 0, 0.2);" id="feedback">
+                <h4 style="text-align: center;">Feedback Form</h4>
+                <h5>Please help us improve customer experience!!</h5>
+                <div class="form-group">
+                  <label for="Rating"><h6>How would you like to rate the place?</h6></label>
+                  <fieldset class="stars" style="margin-right:150px;">
+                  <input type="radio" name="stars" id="star1" ontouchstart="ontouchstart"/>
+                  <label class="fa fa-star" for="star1"></label>
+                  <input type="radio" name="stars" id="star2" ontouchstart="ontouchstart"/>
+                  <label class="fa fa-star" for="star2"></label>
+                  <input type="radio" name="stars" id="star3" ontouchstart="ontouchstart"/>
+                  <label class="fa fa-star" for="star3"></label>
+                  <input type="radio" name="stars" id="star4" ontouchstart="ontouchstart"/>
+                  <label class="fa fa-star" for="star4"></label>
+                  <input type="radio" name="stars" id="star5" ontouchstart="ontouchstart"/>
+                  <label class="fa fa-star" for="star5"></label>
+                </fieldset>
+                </div>
+                <div class="form-group">
+                <label for="Exp"><h6>Is the place following Safety Guidelines?</h6></label>
+                <br>
+                <div class="form-check ch1 form-check-inline">
+                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
+                    <label class="form-check-label" for="inlineRadio1">Not at All</label>
+                  </div>
+                  <div class="form-check ch1 form-check-inline">
+                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
+                    <label class="form-check-label" for="inlineRadio2">Not so much</label>
+                  </div>
+                  <div class="form-check ch1 form-check-inline">
+                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3" value="option3">
+                    <label class="form-check-label" for="inlineRadio3">Very Much</label>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label for="Exp"><h6>Is the place crowded?</h6></label>
+                  <br>
+                <div class="form-check ch2 form-check-inline">
+                    <input class="form-check-input" type="radio" name="inlineRadioOptions1" id="inlineRadio1" value="option1">
+                    <label class="form-check-label" for="inlineRadio1">Not at All</label>
+                  </div>
+                  <div class="form-check ch2 form-check-inline">
+                    <input class="form-check-input" type="radio" name="inlineRadioOptions1" id="inlineRadio2" value="option2">
+                    <label class="form-check-label" for="inlineRadio2">Not so much</label>
+                  </div>
+                  <div class="form-check ch2 form-check-inline">
+                    <input class="form-check-input" type="radio" name="inlineRadioOptions1" id="inlineRadio3" value="option3">
+                    <label class="form-check-label" for="inlineRadio3">Very Much</label>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label for="Exp"><h6>Is the place regularly sanitized?</h6></label>
+                  <br>
+                <div class="form-check ch3 form-check-inline">
+                    <input class="form-check-input" type="radio" name="inlineRadioOptions2" id="inlineRadio1" value="option1">
+                    <label class="form-check-label" for="inlineRadio1">Not at All</label>
+                  </div>
+                  <div class="form-check ch3 form-check-inline">
+                    <input class="form-check-input" type="radio" name="inlineRadioOptions2" id="inlineRadio2" value="option2">
+                    <label class="form-check-label" for="inlineRadio2">Not so much</label>
+                  </div>
+                  <div class="form-check ch3 form-check-inline">
+                    <input class="form-check-input" type="radio" name="inlineRadioOptions2" id="inlineRadio3" value="option3">
+                    <label class="form-check-label" for="inlineRadio3">Very Much</label>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label for="Exp"><h6>Is social Distancing followed?</h6></label>
+                  <br>
+                <div class="form-check ch4 form-check-inline">
+                    <input class="form-check-input" type="radio" name="inlineRadioOptions3" id="inlineRadio1" value="option1">
+                    <label class="form-check-label" for="inlineRadio1">Not at All</label>
+                  </div>
+                  <div class="form-check ch4 form-check-inline">
+                    <input class="form-check-input" type="radio" name="inlineRadioOptions3" id="inlineRadio2" value="option2">
+                    <label class="form-check-label" for="inlineRadio2">Not so much</label>
+                  </div>
+                  <div class="form-check ch4 form-check-inline">
+                    <input class="form-check-input" type="radio" name="inlineRadioOptions3" id="inlineRadio3" value="option3">
+                    <label class="form-check-label" for="inlineRadio3">Very Much</label>
+                  </div>
+                </div>
+                <div class="form-group">
+                    <label for="comment"><h6>Any Suggestions?</h6></label>
+                    <textarea class="form-control" rows="3.5" id="comment"></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary" style="width: 150px; margin-left: 150px;" id="fbsubmit">Submit</button>
+              </form>
+
+<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+<script>
+    $(function() {
+        $('#feedback').hide();
+        $('#checkout').click(function (e) {
+        $('#feedback').fadeIn(1000);
+        $('#feedback').addClass('fix-position');
+        $('#overlay').addClass('blur-filter');
+        $('#overlay').addClass('blur-out');
+        });
+        $('#fbsubmit').click(function (e) {
+        $('#feedback').fadeOut(700);
+        $('#overlay').removeClass('blur-filter');
+    });
+});
+  </script>
+</body>
+</html>

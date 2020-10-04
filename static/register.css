@@ -1,0 +1,16 @@
+.panel-login>.panel-heading {
+	text-align:center;
+}
+.panel-login>.panel-heading a{
+	text-decoration: none;
+	color:rgb(100, 98, 98);
+	font-weight: bold;
+	font-size: 15px;
+	-webkit-transition: all 0.1s linear;
+	-moz-transition: all 0.1s linear;
+	transition: all 0.1s linear;
+}
+.panel-login>.panel-heading a.active{
+	color: black;
+	font-size: 18px;
+}
