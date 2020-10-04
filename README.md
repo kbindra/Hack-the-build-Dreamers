@@ -45,3 +45,4 @@ pip install -r requirements.txt
 python app.py
 Open localhost:5000 on your browser
 ```
+![Screenshot of home page](https://github.com/kbindra/Hack-the-build-Dreamers/blob/master/screenshots/frontpage.jpg)
