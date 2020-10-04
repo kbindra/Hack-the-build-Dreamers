@@ -11,14 +11,8 @@ Requires Python3 to run locally. See instructions to setup [Python3](https://www
 * Clone the repository in a folder and write the following commands
 ```
 1.git clone https://github.com/WooTechnology/DINE-IN.git
-2.cd DINE-IN/Hotel App/frontend/
-3.npm install
+
 ```
-* Start Development Server
-```
-4.npm start
-```
-Open [localhost:3000](https://localhost:3000)
 #### Backend(Flask)
 * Setup virtual environment
 ```
